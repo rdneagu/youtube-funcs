@@ -1,5 +1,5 @@
 <template>
-  <i class="icon" :class="[ animated, isClickable ]" :id="icon">{{ name }}</i>
+  <i class="icon" :class="[ animated, isClickable ]" :id="icon"></i>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   computed: {
     // Can the icon be clicked
     isClickable() {
-      return (click) ? 'clickable' : false;
+      return (this.click) ? 'clickable' : false;
     },
   },
   methods: {
