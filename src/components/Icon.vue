@@ -15,11 +15,13 @@ export default {
   methods: {
     // When the icon is clicked
     onClick() {
-      if (this.disabled) return;
+      if (this.disabled) return false;
       if (typeof (this.click) === 'function') return this.click();
+
+      return false;
     },
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
