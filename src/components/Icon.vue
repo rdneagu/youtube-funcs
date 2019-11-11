@@ -1,5 +1,5 @@
 <template>
-  <i class="icon" :class="[ animated, isClickable ]" :id="icon"></i>
+  <i class="icon" :class="[ animated, isClickable, icon ]"></i>
 </template>
 
 <script>
