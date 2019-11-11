@@ -20,6 +20,7 @@ export default {
       iconMaximize: 'ico-maximize-maxi',
       iconSettings: 'ico-settings',
       iconClose: 'ico-close',
+      ,
     };
   },
   components: {
