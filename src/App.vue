@@ -29,8 +29,8 @@ html, body, #app {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: linear-gradient(darken(crimson, 20%),
-                  darken(crimson, 25%), darken(crimson, 20%));
+  background: linear-gradient(darken(crimson, 30%),
+                  darken(crimson, 32.5%), darken(crimson, 30%));
 }
 
 .wnd-drag {
