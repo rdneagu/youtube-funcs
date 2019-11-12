@@ -18,6 +18,7 @@ export default {
 <style lang="scss">
 @import '@/scss/_clearfix.scss';
 @import '@/scss/_normalize.scss';
+@import '@/scss/_fonts.scss';
 
 html, body {
   height: 100%;
