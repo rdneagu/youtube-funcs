@@ -26,7 +26,7 @@
   &.clickable {
     cursor: pointer;
     &:hover {
-      color: lighten(#ff2121);
+      color: lighten(#ff2121, 15%);
     }
   }
 }
