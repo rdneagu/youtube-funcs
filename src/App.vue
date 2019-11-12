@@ -32,13 +32,4 @@ html, body, #app {
   background: linear-gradient(darken(crimson, 30%),
                   darken(crimson, 32.5%), darken(crimson, 30%));
 }
-
-.wnd-drag {
-  -webkit-app-region: drag;
-}
-
-.wnd-title-bar {
-  height: 24px;
-  border-top: 2px solid crimson;
-}
 </style>
