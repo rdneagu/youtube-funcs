@@ -72,5 +72,6 @@ export default {
 
 .wnd-control .icon {
   -webkit-app-region: no-drag;
+  margin: 0 1px;
 }
 </style>
