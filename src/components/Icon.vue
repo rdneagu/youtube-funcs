@@ -1,5 +1,5 @@
 <template>
-  <i class="icon" :class="[ animated, isClickable, icon ]"></i>
+  <i class="icon" :class="[ animated, isClickable, icon ]" @click="OnClick()"></i>
 </template>
 
 <script>
@@ -14,10 +14,11 @@ export default {
   },
   methods: {
     // When the icon is clicked
-    onClick() {
-      if (this.disabled) return false;
-      if (typeof (this.click) === 'function') return this.click();
-
+    OnClick() {
+      if (this.disabled === false && typeof (this.click) === 'function') {
+        this.click();
+        return true;
+      }
       return false;
     },
   },
