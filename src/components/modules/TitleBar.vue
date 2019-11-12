@@ -4,7 +4,7 @@
     <div class="wnd-control">
       <Icon :icon="iconMinimize" :click="minimize.bind()"></Icon>
       <Icon :icon="iconMaximize" :click="maximize.bind()"></Icon>
-      <Icon :icon="iconSettings"></Icon>
+      <Icon :icon="iconSettings" :click="settings.bind()"></Icon>
       <Icon :icon="iconClose" :click="close.bind()"></Icon>
     </div>
   </section>
@@ -46,6 +46,10 @@ export default {
       }
     },
     settings() {
+      const win = remote.BrowserWindow.getFocusedWindow();
+      if (win !== null) {
+        win.webContents.openDevTools();
+      }
     },
     close() {
       const win = remote.BrowserWindow.getFocusedWindow();
