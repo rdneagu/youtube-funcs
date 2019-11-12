@@ -1,5 +1,6 @@
 <template>
   <section class="wnd-drag wnd-title-bar">
+    <span class="wnd-title">Youtube Functions</span>
     <div class="wnd-control">
       <Icon :icon="iconMinimize" :click="minimize.bind()"></Icon>
       <Icon :icon="iconMaximize" :click="maximize.bind()"></Icon>
@@ -60,18 +61,20 @@ export default {
 </script>
 
 <style lang="scss">
-.wnd-drag {
-  -webkit-app-region: drag;
-}
-
+.wnd-drag { -webkit-app-region: drag; }
 .wnd-title-bar {
   position: relative;
-  height: 20px;
-  border-top: 2px solid crimson;
-}
-
-.wnd-control .icon {
-  -webkit-app-region: no-drag;
-  margin: 0 1px;
+  padding: 2px;
+  background-color: rgba(black, 0.25);
+  .wnd-title { color: crimson; }
+  .wnd-control {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    .icon {
+      -webkit-app-region: no-drag;
+      margin: 0 1px;
+    }
+  }
 }
 </style>
