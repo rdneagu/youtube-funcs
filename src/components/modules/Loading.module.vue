@@ -2,6 +2,7 @@
   <section class="yt-loading-app">
     <div class="yt-logo">
       <img src="@/assets/images/yt_logo_mono_dark.png" />
+      
     </div>
   </section>
 </template>
@@ -19,6 +20,7 @@ export default {
   align-items: center;
   justify-content: center;
   .yt-logo {
+    position: relative;
     //background: url(../../assets/images/yt_logo_mono_dark.png) no-repeat;
   }
 }
