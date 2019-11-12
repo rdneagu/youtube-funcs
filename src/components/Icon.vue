@@ -28,9 +28,9 @@ export default {
 @font-face {
   font-family: 'ico-youtube-funcs';
   src:
-    url('../assets/fonts/ico-youtube-funcs.ttf?plnw31') format('truetype'),
-    url('../assets/fonts/ico-youtube-funcs.woff?plnw31') format('woff'),
-    url('../assets/fonts/ico-youtube-funcs.svg?plnw31#ico-youtube-funcs') format('svg');
+    url('../assets/fonts/ico-youtube-funcs.ttf?xi4fi') format('truetype'),
+    url('../assets/fonts/ico-youtube-funcs.woff?xi4fi') format('woff'),
+    url('../assets/fonts/ico-youtube-funcs.svg?xi4fi#ico-youtube-funcs') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
