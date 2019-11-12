@@ -70,15 +70,12 @@ export default {
   position: relative;
   padding: 2px;
   background-color: rgba(black, 0.25);
-  .wnd-title { color: crimson; }
+  .wnd-title { color: crimson; font-weight: 500 }
   .wnd-control {
     position: absolute;
     right: 4px;
     top: 2px;
-    .icon {
-      -webkit-app-region: no-drag;
-      margin: 0 1px;
-    }
+    .icon { -webkit-app-region: no-drag; margin: 0 1px; }
   }
 }
 </style>
