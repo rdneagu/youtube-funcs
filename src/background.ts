@@ -20,10 +20,12 @@ function createWindow() {
 
   // Create the browser window.
   win = new BrowserWindow({
-    width: Math.floor(width*0.9),
-    height: Math.floor(height*0.9),
+    width: Math.floor(width * 0.9),
+    height: Math.floor(height * 0.9),
+    backgroundColor: '#220000',
     webPreferences: {
       nodeIntegration: true,
+      //devTools: false // Completely remove chromium developer tools
     },
     frame: false,
     resizable: false,
