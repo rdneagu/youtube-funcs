@@ -1,9 +1,5 @@
 <template>
-<<<<<<< Updated upstream
   <i class="icon" :class="[ animated, isClickable, icon ]"></i>
-=======
-  <i class="icon" :class="[ animated, isClickable ]" :id="icon">{{ icon }}</i>
->>>>>>> Stashed changes
 </template>
 
 <script>
