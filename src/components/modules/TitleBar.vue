@@ -1,15 +1,15 @@
 <template>
   <section class="wnd-drag wnd-title-bar">
     <div class="wnd-control">
-      <Icon :animated="true" :icon="iconMinimize" :click="minimize()"></Icon>
-      <Icon :animated="true" :icon="iconMaximize" :click="maximize()"></Icon>
-      <Icon :animated="true" :icon="iconSettings"></Icon>
-      <Icon :animated="true" :icon="iconClose" :click="close()"></Icon>
+      <Icon :icon="iconMinimize" :click="minimize.bind()"></Icon>
+      <Icon :icon="iconMaximize" :click="maximize.bind()"></Icon>
+      <Icon :icon="iconSettings"></Icon>
+      <Icon :icon="iconClose" :click="close.bind()"></Icon>
     </div>
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import Icon from '../Icon.vue';
 
 const { remote } = require('electron');
@@ -17,34 +17,36 @@ const { remote } = require('electron');
 export default {
   data() {
     return {
-      IsMaxed: true,
-      iconMinimize: 'ico-minimize',
-      iconMaximize: 'ico-maximize-maxi',
-      iconSettings: 'ico-settings',
-      iconClose: 'ico-close',
+      isResized: false,
+      iconMinimize: 'icon-minimize',
+      iconMaximize: 'icon-maximize-mini',
+      iconSettings: 'icon-settings',
+      iconClose: 'icon-close',
     };
   },
   methods: {
-    minimize():void {
+    minimize() {
       const win = remote.BrowserWindow.getFocusedWindow();
       if (win !== null) {
         win.minimize();
       }
     },
-    maximize():void {
+    maximize() {
       const win = remote.BrowserWindow.getFocusedWindow();
       if (win !== null) {
         const { width, height } = remote.screen.getPrimaryDisplay().workAreaSize;
-        this.IsMaxed = !this.IsMaxed;
-        const ratio:number = (this.IsMaxed) ? 0.8 : 0.9;
-        win.setSize(Math.floor(width * ratio), Math.floor(height * ratio), true);
+        this.isResized = !this.isResized;
+        const size = (this.isResized) ? 0.8 : 0.9;
+        this.iconMaximize = (this.isResized) ? 'icon-maximize-maxi' : 'icon-maximize-mini';
+        // Apply the new changes to the window
+        win.setMinimumSize(Math.floor(width * size), Math.floor(height * size));
+        win.setSize(Math.floor(width * size), Math.floor(height * size), true);
         win.center();
-        this.iconMaximize = (this.IsMaxed) ? 'ico-maximize-mini' : 'ico-maximize-maxi';
       }
     },
-    settings():void {
+    settings() {
     },
-    close():void {
+    close() {
       const win = remote.BrowserWindow.getFocusedWindow();
       if (win !== null) {
         win.close();
@@ -57,6 +59,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.wnd-drag {
+  -webkit-app-region: drag;
+}
 
+.wnd-title-bar {
+  position: relative;
+  height: 20px;
+  border-top: 2px solid crimson;
+}
+
+.wnd-control .icon {
+  -webkit-app-region: no-drag;
+}
 </style>
