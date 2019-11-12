@@ -70,6 +70,7 @@ export default {
   position: relative;
   padding: 2px;
   background-color: rgba(black, 0.25);
+  z-index: 1;
   .wnd-title { color: crimson; }
   .wnd-control {
     position: absolute;
